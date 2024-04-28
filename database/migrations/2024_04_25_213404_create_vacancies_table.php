@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('experience_id')->index();
             $table->foreign('experience_id')->references('id')->on('experiences')->onDelete('cascade');
             $table->unsignedBigInteger('vacancy_id')->index();
-            $table->foreign('vacancy_id')->references('id')->on('vacancys')->onDelete('cascade');
+            $table->foreign('vacancy_id')->references('id')->on('vacancies')->onDelete('cascade');
             $table->string('title');
             $table->text('body');
             $table->double('price')->default(0);
