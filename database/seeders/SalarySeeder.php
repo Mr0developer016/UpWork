@@ -12,6 +12,22 @@ class SalarySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $objs = [
+            'name' => [ rand
+            (1, 5) *1000
+            ]            
+        ];
+        foreach ($objs as $obj) {
+            $salary = Salary::create([
+                'name' => $obj['name'],
+            ]);
+
+            foreach ($obj['models'] as $model) {
+                Category::create([
+                    'salary_id' => $Category->id,
+                    'name' => $model,
+                ]);
+            }
+        }
     }
 }

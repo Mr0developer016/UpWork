@@ -4,46 +4,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+// use database\factories\UserFactory.php;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-class User extends Authenticatable
+class UserFactory extends Factory
 {
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $model = User::class;
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    public function jobs()
+    public function definition()
     {
-        return $this->hasMany(Job::class, 'client_id');
-    }
-
-    public function proposals()
-    {
-        return $this->hasMany(Proposal::class, 'freelancer_id');
-    }
-
-    public function reviewsGiven()
-    {
-        return $this->hasMany(Review::class, 'client_id');
-    }
-
-    public function reviewsReceived()
-    {
-        return $this->hasMany(Review::class, 'freelancer_id');
-    }
-
-    public function sentMessages()
-    {
-        return $this->hasMany(Message::class, 'sender_id');
-    }
-
-    public function receivedMessages()
-    {
-        return $this->hasMany(Message::class, 'recipient_id');
+        return $this->hasMany(vacancies::class);
+        
     }
 }

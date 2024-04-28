@@ -1,23 +1,27 @@
 <?php
 
-// app/Models/Proposal.php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Proposal extends Model
+class Brand extends Model
 {
-    protected $fillable = ['description', 'job_id', 'freelancer_id'];
+    protected $guarded = [
+        'id',
+    ];
 
-    public function job()
+    public $timestamps = false;
+
+
+    public function categories()
     {
-        return $this->belongsTo(Job::class);
+        return $this->hasMany(Categories::class)
+            ->orderBy('name');
     }
 
-    public function freelancer()
+
+    public function vacancy()
     {
-        return $this->belongsTo(User::class, 'freelancer_id');
+        return $this->hasMany(vacancies::class);
     }
 }
-

@@ -1,23 +1,20 @@
 <?php
 
-// app/Models/Message.php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Experience extends Model
 {
-    protected $fillable = ['content', 'sender_id', 'recipient_id'];
+    protected $guarded = [
+        'id',
+    ];
 
-    public function sender()
-    {
-        return $this->belongsTo(User::class, 'sender_id');
-    }
+    public $timestamps = false;
 
-    public function recipient()
+
+    public function experiences()
     {
-        return $this->belongsTo(User::class, 'recipient_id');
+        return $this->hasMany(experience::class);
     }
 }
-

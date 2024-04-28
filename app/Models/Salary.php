@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Salary extends Model
 {
-    use HasFactory;
+    public function vacanciess()
+    {
+        return $this->hasMany(vacancy::class);
+    }
 }
