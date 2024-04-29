@@ -17,17 +17,6 @@ class ContactSeeder extends Seeder
 
             ]            
         ];
-        foreach ($objs as $obj) {
-            $contact = Contact::create([
-                'name' => $obj['name'],
-            ]);
-
-            foreach ($obj['models'] as $model) {
-                Category::create([
-                    'contact_id' => $Category->id,
-                    'name' => $model,
-                ]);
-            }
-        }
+        
     }
 }

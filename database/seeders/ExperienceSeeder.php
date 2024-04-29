@@ -13,21 +13,16 @@ class ExperienceSeeder extends Seeder
     public function run(): void
     {
         $objs = [
-            'name' => [
+            'name' => 'years of experience' [ 
                 rand(2, 15)
             ]
         ];
+        
         foreach ($objs as $obj) {
-            $experience = Experience::create([
-                'name' => $obj['name'],
+            Ecxperience::create([
+                'name' => $obj,
+                'id' => $obj,
             ]);
-
-            foreach ($obj['models'] as $model) {
-                Experience::create([
-                    'experience_id' => $experience->id,
-                    'name' => $model,
-                ]);
-            }
         }
     }
 }

@@ -33,8 +33,7 @@ class CarFactory extends Factory
         return [
             'user_id' => $user->id,
             'location_id' => $location->id,
-            'brand_id' => $category->brand_id,
-            'brand_model_id' => $category->id,
+            'category_id' => $category->category_id,
             'experience_id' => $experience->id,
             'salary_id' => $salary->id,
             'title' =>$category->name   . ' ' .$experience->name   . ' ' .$salary->name. ' ' . $contact->name,

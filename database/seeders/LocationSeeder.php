@@ -28,6 +28,7 @@ class LocationSeeder extends Seeder
         foreach ($objs as $obj) {
         Location::create([
         'name' => $obj,
+        'id' => $obj,
         ]);
         }
     }

@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illimunate\Database\CategotySeeder;
 
-class Category extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -32,7 +33,7 @@ class Category extends Seeder
                 'Python Libraries, Data Visualation Tools, Deep Learning ',
             ]],
         ];
-
+        
         foreach ($objs as $obj) {
             $category = Category::create([
                 'name' => $obj['name'],
@@ -40,10 +41,15 @@ class Category extends Seeder
 
             foreach ($obj['models'] as $model) {
                 Category::create([
-                    'category_id' => $category->id,
+                    'category_id' => $Category->id,
                     'name' => $model,
                 ]);
             }
         }
+        
+        
+            
+        
+
     }
 }

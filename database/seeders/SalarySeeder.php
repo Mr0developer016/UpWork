@@ -23,8 +23,8 @@ class SalarySeeder extends Seeder
             ]);
 
             foreach ($obj['models'] as $model) {
-                Category::create([
-                    'salary_id' => $Category->id,
+                Salary::create([
+                    'salary_id' => $salary->id,
                     'name' => $model,
                 ]);
             }

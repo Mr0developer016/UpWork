@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-    protected $fillable = ['comment', 'rating', 'job_id', 'vacancy_id', 'user_id'];
+    protected $fillable = ['job_id', 'vacancy_id', 'user_id'];
 
     public function job()
     {

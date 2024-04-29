@@ -16,19 +16,14 @@ class DatabaseSeeder extends Seeder
     {
         
         $this->call([
-            LocationSeeder::class,
             CategorySeeder::class,
+            LocationSeeder::class,
             ExperienceSeeder::class,
-            VacancySeeder::class,
             ContactSeeder::class,
         ]);
 
-        Vacancy::factory()
-            ->count(600)
-            ->create();
         
-        Salary::factory()
-            ->count()
-            ->create();
+        
+       
     }
 }

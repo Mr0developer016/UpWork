@@ -8,21 +8,31 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
-    protected $fillable = ['title', 'description', 'client_id'];
+    protected $fillable = ['user_id', 'category_id', 'Experience_id', 'salary_id', 'contact_id'];
 
-    public function client()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'client_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function proposals()
+    public function categories()
     {
-        return $this->hasMany(Proposal::class);
+        return $this->hasMany(Categories::class);
     }
 
-    public function reviews()
+    public function experiences()
     {
-        return $this->hasMany(Review::class);
+        return $this->hasMany(Experiences::class);
+    }
+
+    public function salaries()
+    {
+        return $this->hasMany(salaries::class);
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contacts::class);
     }
 }
 

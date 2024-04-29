@@ -15,7 +15,7 @@ class Contact extends Model
 
     public function contacts()
     {
-        return $this->hasMany(contacts::class)
+        return $this->hasMany(Contacts::class)
             ->orderBy('name');
     }
 

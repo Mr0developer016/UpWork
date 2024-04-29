@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model
+class Category extends Model
 {
     protected $guarded = [
         'id',
@@ -20,8 +21,5 @@ class Brand extends Model
     }
 
 
-    public function vacancy()
-    {
-        return $this->hasMany(vacancies::class);
-    }
+   
 }
